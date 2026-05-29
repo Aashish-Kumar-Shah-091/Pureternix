@@ -3,10 +3,10 @@ import { useAuth } from '../../context/AuthContext';
 import { HiMail, HiLockClosed, HiEye, HiEyeOff } from 'react-icons/hi';
 
 const testAccounts = [
-  { role: 'Super Admin', email: 'superadmin@paaila.com', password: 'admin123', color: 'border-purple-200 hover:border-purple-300 hover:bg-purple-50/50', dot: 'bg-purple-400' },
-  { role: 'School Admin', email: 'admin@sunrisemontessori.edu', password: 'school123', color: 'border-sky-200 hover:border-sky-300 hover:bg-sky-50/50', dot: 'bg-sky-400' },
-  { role: 'Teacher', email: 'anita.patel@sunrisemontessori.edu', password: 'teach123', color: 'border-nature-200 hover:border-nature-300 hover:bg-nature-50/50', dot: 'bg-nature-400' },
-  { role: 'Parent', email: 'suresh.gupta@gmail.com', password: 'parent123', color: 'border-warm-200 hover:border-warm-300 hover:bg-warm-50/50', dot: 'bg-warm-400' },
+  { role: 'Super Admin', email: 'superadmin@paaila.com', color: 'border-purple-200 hover:border-purple-300 hover:bg-purple-50/50', dot: 'bg-purple-400' },
+  { role: 'School Admin', email: 'admin@sunrisemontessori.edu', color: 'border-sky-200 hover:border-sky-300 hover:bg-sky-50/50', dot: 'bg-sky-400' },
+  { role: 'Teacher', email: 'anita.patel@sunrisemontessori.edu', color: 'border-nature-200 hover:border-nature-300 hover:bg-nature-50/50', dot: 'bg-nature-400' },
+  { role: 'Parent', email: 'suresh.gupta@gmail.com', color: 'border-warm-200 hover:border-warm-300 hover:bg-warm-50/50', dot: 'bg-warm-400' },
 ];
 
 export default function Login() {
@@ -34,13 +34,10 @@ export default function Login() {
     }
   };
 
-  const quickLogin = async (account) => {
+  const selectAccount = (account) => {
     setEmail(account.email);
-    setPassword(account.password);
+    setPassword('');
     setError('');
-    setIsLoading(true);
-    await new Promise(r => setTimeout(r, 500));
-    login(account.email, account.password);
   };
 
   return (
@@ -124,12 +121,12 @@ export default function Login() {
           </form>
 
           <div className="mt-6 pt-5 border-t border-gray-100">
-            <p className="text-[11px] text-gray-400 mb-3 uppercase tracking-wider font-medium">Demo accounts</p>
+            <p className="text-[11px] text-gray-400 mb-3 uppercase tracking-wider font-medium">Select account</p>
             <div className="grid grid-cols-2 gap-2">
               {testAccounts.map(acc => (
                 <button
                   key={acc.role}
-                  onClick={() => quickLogin(acc)}
+                  onClick={() => selectAccount(acc)}
                   disabled={isLoading}
                   className={`flex items-center gap-2 px-3 py-[9px] rounded-[10px] border text-left transition-all btn-press disabled:opacity-40 bg-white ${acc.color}`}
                 >
