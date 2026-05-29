@@ -8,7 +8,10 @@
       "Bash(cp /tmp/pureternix/.gitignore /c/Users/base/Desktop/Montessori/)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(curl -s http://localhost:5173)"
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(curl -s http://localhost:5175)"
     ]
   }
 }

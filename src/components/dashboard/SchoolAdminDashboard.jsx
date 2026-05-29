@@ -16,8 +16,8 @@ export default function SchoolAdminDashboard() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">School Dashboard</h1>
-          <p className="text-gray-500 text-sm">Sunrise Montessori · Today's Overview</p>
+          <h1 className="text-[22px] font-bold text-gray-800">Dashboard</h1>
+          <p className="text-gray-500 text-[13px] mt-0.5">Sunrise Montessori · {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</p>
         </div>
         <div className="flex gap-2">
           <Link to="/students" className="flex items-center gap-1.5 px-3.5 py-2 bg-primary-500 text-white text-sm rounded-xl hover:bg-primary-600 transition-colors btn-press shadow-sm">

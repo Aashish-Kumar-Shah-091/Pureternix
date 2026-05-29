@@ -9,8 +9,8 @@ export default function SuperAdminDashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">Platform Overview</h1>
-        <p className="text-gray-500 text-sm">PURETERNIX admin console · All schools at a glance</p>
+        <h1 className="text-[22px] font-bold text-gray-800">Platform Overview</h1>
+        <p className="text-gray-500 text-[13px] mt-0.5">All schools at a glance</p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

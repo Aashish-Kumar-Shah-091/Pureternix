@@ -2,7 +2,7 @@ const today = new Date().toISOString().split('T')[0];
 const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
 export const users = [
-  { id: 1, email: 'superadmin@pureternix.com', password: 'admin123', role: 'super_admin', name: 'Rajesh Mehta', avatar: null },
+  { id: 1, email: 'superadmin@paaila.com', password: 'admin123', role: 'super_admin', name: 'Rajesh Mehta', avatar: null },
   { id: 2, email: 'admin@sunrisemontessori.edu', password: 'school123', role: 'school_admin', name: 'Priya Sharma', avatar: null, schoolId: 1 },
   { id: 3, email: 'anita.patel@sunrisemontessori.edu', password: 'teach123', role: 'teacher', name: 'Anita Patel', avatar: null, schoolId: 1, classId: 1 },
   { id: 4, email: 'suresh.gupta@gmail.com', password: 'parent123', role: 'parent', name: 'Suresh Gupta', avatar: null, schoolId: 1, childIds: [1, 2] },

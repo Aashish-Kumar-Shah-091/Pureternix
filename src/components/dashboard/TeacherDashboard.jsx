@@ -18,7 +18,8 @@ export default function TeacherDashboard() {
   const absentCount = todayAttendance.filter(a => a.status === 'absent').length;
   const unmarkedCount = myStudents.length - todayAttendance.length;
 
-  const timeOfDay = new Date().getHours() < 12 ? 'morning' : 'afternoon';
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 15 ? 'Afternoon' : 'Almost there';
 
   const todayTasks = [
     { label: 'Mark attendance', done: todayAttendance.length === myStudents.length, path: '/attendance' },
@@ -30,8 +31,8 @@ export default function TeacherDashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">Good {timeOfDay}, {user.name.split(' ')[0]}!</h1>
-        <p className="text-gray-500 text-sm">{myClass?.name} · {myClass?.room} · {myStudents.length} children</p>
+        <h1 className="text-[22px] font-bold text-gray-800">{greeting}, {user.name.split(' ')[0]}</h1>
+        <p className="text-gray-500 text-[13px] mt-0.5">{myClass?.name} · {myClass?.room} · {myStudents.length} children</p>
       </div>
 
       {/* Quick Actions */}

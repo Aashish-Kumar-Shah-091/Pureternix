@@ -10,14 +10,16 @@ export default function ParentDashboard() {
   const selectedChild = myChildren.find(c => c.id === activeChild);
 
   const todayStr = new Date().toISOString().split('T')[0];
-  const timeOfDay = new Date().getHours() < 12 ? 'morning' : new Date().getHours() < 17 ? 'afternoon' : 'evening';
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  const subtext = hour < 10 ? "Here's the morning update" : hour < 14 ? "Here's how the day is going" : "Here's today's summary";
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Good {timeOfDay}, {user.name.split(' ')[0]}!</h1>
-          <p className="text-gray-500 text-sm">Here's how your children are doing today</p>
+          <h1 className="text-[22px] font-bold text-gray-800">{greeting}, {user.name.split(' ')[0]}</h1>
+          <p className="text-gray-500 text-[13px] mt-0.5">{subtext}</p>
         </div>
         {myChildren.length > 1 && (
           <div className="flex gap-2">
